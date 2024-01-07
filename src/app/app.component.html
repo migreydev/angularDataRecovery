@@ -1,0 +1,29 @@
+<div class="border border-dark">
+  <div class="card w-75 mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Componente Padre</h5>
+      <input type="number" [(ngModel)]="valorInicial" hidden>
+      <input type="number" [(ngModel)]="increment">
+      <input type="number" [(ngModel)]="mostrarContador">
+    </div>
+    <div class="border border-red">
+      <app-hijo [valorInicial]="valorInicial"
+                [increment]="increment"
+                (contadorOutput)="actualizacionContador($event)">
+      </app-hijo>
+    <br><br>
+      <h3>Formulario</h3>
+      <app-formulario
+        [username]="usernameApp"
+        [password]="passwordApp"
+        (pasarDatos)="funcionRecogerDatos($event)">
+      </app-formulario>
+      <br><br>
+      <h3>Tabla</h3>
+      <app-tabla>
+
+      </app-tabla>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="container">
+    <h5>Componente hijo</h5>
+    <app-busqueda
+        [buscarEmpleado]="buscarEmpleado"
+        (outputBusqueda)="outputPadreEmpleado($event)"
+    >
+    </app-busqueda>
+    <br><br>
+    <h5>Componente Padre</h5>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>nombre</th>
+          <th>apellido</th>
+          <th>cargo</th>
+          <th>departamento</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Si la variable buscarEmpleado esta vacia se muestra el array empleados-->
+        @if (!buscarEmpleado){
+            @for (empleado of empleados; track $index) {
+                <tr>
+                    <td> {{empleado.nombre}}</td>
+                    <td> {{empleado.apellido}}</td>
+                    <td> {{empleado.cargo}}</td>
+                    <td> {{empleado.departamento}}</td>
+                </tr>
+            }
+        <!-- Si no esta vacia se muestra los empleados filtrados -->
+        }@else{
+            @for (empleado of empleadosFiltrados; track $index) {
+                <tr>
+                    <td> {{empleado.nombre}}</td>
+                    <td> {{empleado.apellido}}</td>
+                    <td> {{empleado.cargo}}</td>
+                    <td> {{empleado.departamento}}</td>
+                </tr>
+            }
+        }
+      </tbody>
+    </table>
+</div>

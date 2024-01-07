@@ -1,0 +1,10 @@
+<form>
+    <br>
+    <label for="username" style="margin-right: 15px">Usuario:</label>
+    <input type="text" name="username" required [(ngModel)]="username" style="margin-right: 15px">
+
+    <label for="password" style="margin-right: 15px">Contraseña:</label>
+    <input type="password" name="password" required [(ngModel)]="password" style="margin-right: 15px">
+    <br><br>
+    <button type="button" class="btn btn-success" (click)="funcionPasarDatos()">Registro</button>
+  </form>
