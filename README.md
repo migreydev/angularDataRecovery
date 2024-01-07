@@ -1,4 +1,4 @@
-# AngularPractica
+# Recuperacion datos a traves de las directivas @Input y @Output
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.6.
 
